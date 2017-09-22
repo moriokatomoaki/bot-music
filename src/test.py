@@ -4,12 +4,6 @@ import os
 import csv
 import datetime
 
-with open('mat/account.csv', 'rU') as f:
-    reader = csv.reader(f, delimiter=',')
-    for row in reader:
-        
-
-
 api = twitter.Api(
         consumer_key        = os.environ["C_KEY"],
         consumer_secret     = os.environ["C_SECRET"],
@@ -18,11 +12,9 @@ api = twitter.Api(
         )
 
 
-# print (datetime.datetime.today().year)
 
 with open('mat/data.csv', 'rU') as f:
     reader = csv.reader(f, delimiter=',')
-    # header = next(reader)
     for row in reader:
         if datetime.datetime.today().month == int(row[3]):
             if datetime.datetime.today().day == int(row[4]):
